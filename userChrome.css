@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Custom-Font';
+    font-weight: 300;
+    src: url("./fonts/Poppins/Poppins-Regular.ttf") format('truetype');
+}
+
+#tabbrowser-tabs {
+    --user-tab-rounding: 18px !important;
+}
+
+:root {
+    font-weight: 400 !important;
+    font-family: 'Custom-Font', sans-serif !important;
+    --inline-tab-padding: 10px !important;
+    --toolbarbutton-border-radius: 8px !important;
+}
+
+
+.tab-background {
+    border-radius: var(--user-tab-rounding) !important;
+}
+
+.tab-content {
+    font-family: 'Custom-Font', sans-serif !important;
+    padding: 0 12px !important;
+}
+
+#nav-bar {
+    border-radius: 18px 18px 0px 0px;
+}
+
+#urlbar-background,
+#searchbar {
+    border-radius: 18px !important;
+}
+
+#identity-icon-box,
+.urlbar-page-action,
+#tracking-protection-icon-container {
+    border-radius: 30px !important;
+}
+
+#main-window {
+    /* background-color: rgba(0,0,0, 0.9) !important; */
+    /* background-color: green !important; */
+    /* opacity: 0.5 !important; */
+}
+
+#urlbar {
+    transition: 200ms all ease !important;
+}
+
+/* #navigator-toolbox{ --toolbar-bgcolor: transparent !important} */
