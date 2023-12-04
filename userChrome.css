@@ -63,6 +63,34 @@
 
 #TabsToolbar {
     padding-left: 20px !important;
+    --tab-border-radius: 8px !important;
+}
+
+#TabsToolbar, #tabbrowser-tabs {
+    --tab-min-height: 38px !important;
+}
+
+#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon {
+    height: auto !important;
+}
+
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+    /* [Connected Tabs] Set a max height based on min-height plus margin-block: 1px 0 */
+#TabsToolbar, #TabsToolbar > hbox, #TabsToolbar-customization-target, #tabbrowser-arrowscrollbox  {
+    max-height: calc(var(--tab-min-height) + 1px) !important;
+}
+    /* [Connected Tabs] Adjust padding around icons on buttons to avoid crushed images */
+#TabsToolbar-customization-target toolbarbutton > .toolbarbutton-icon, 
+#TabsToolbar-customization-target .toolbarbutton-text, 
+#TabsToolbar-customization-target .toolbarbutton-badge-stack,
+#scrollbutton-up,#scrollbutton-down {
+    padding-top: 8px !important;
+    padding-bottom: 7px !important;
 }
 
 #scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
