@@ -8,6 +8,10 @@
     --user-tab-rounding: 18px !important;
 }
 
+#TabsToolbar {
+    --lwt-tab-line-color: rgba(0, 0, 255, 0) !important;
+}
+
 :root {
     font-weight: 400 !important;
     font-family: 'Custom-Font', sans-serif !important;
@@ -17,12 +21,72 @@
 
 
 .tab-background {
-    border-radius: var(--user-tab-rounding) !important;
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+    margin-block: 1px 0px !important; /* Connected */
+}
+
+.tabbrowser-tab {
+    padding: 0 5px !important;
+}
+
+:-moz-any(#TabsToolbar) .tabbrowser-tab[visuallyselected] {
+	--tab-bgcolor: var(--toolbar-bgcolor);
+	--tab-opacity: 1;
+}
+
+.tab-background::before,
+.tab-background::after {
+	content: "" !important;
+	display: block !important;
+	position: absolute !important;
+	width: 10px !important;
+	height: 10px !important;
+	bottom: 0 !important;
+	pointer-events: none !important;
+	transition: box-shadow 0s var(--tab-transition-duration) var(--ease-basic) !important;
+	clip-path: inset(0) !important;
+}
+
+.tab-background::before {
+	border-bottom-right-radius: 10px !important;
+	left: 0 !important;
+	transform: translateX(-10px) !important;
+	box-shadow: 5px 5px 0 5px var(--tab-bgcolor) !important;
+}
+
+.tab-background::after {
+	border-bottom-left-radius: 10px !important;
+	right: 0 !important;
+	transform: translateX(9px) !important;
+	box-shadow: -5px 5px 0 5px var(--tab-bgcolor) !important;
+}
+
+#TabsToolbar {
+    padding-left: 20px !important;
+}
+
+#scrollbutton-up, #scrollbutton-down { /* 6/10/2021 */
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+}
+
+#nav-bar:-moz-lwtheme {
+    box-shadow: none !important;
+}
+
+.tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    --lwt-tabs-border-color: rgba(0, 0, 0, 0.5) !important;
+    border-bottom-color: transparent !important;
+}
+[brighttext="true"] .tab-background:is([selected], [multiselected]):-moz-lwtheme {
+    --lwt-tabs-border-color: rgba(255, 255, 255, 0.5) !important;
+    border-bottom-color: transparent !important;
 }
 
 .tab-content {
     font-family: 'Custom-Font', sans-serif !important;
     padding: 0 12px !important;
+    transform: translateY(2px) !important;
 }
 
 #nav-bar {
